@@ -6,8 +6,8 @@ export const personalInfo = {
   specialization: "Advanced Excel, Power BI & Enterprise ERP Systems",
   location: "Mohali, Punjab, India",
   email: "official.poojabhatt90@gmail.com",
-  linkedin: "https://www.linkedin.com/in/pooja-bhatt-mis",
-  linkedinUsername: "pooja-bhatt-mis",
+  linkedin: "https://www.linkedin.com/in/pooja-bhatt-01b59482/",
+  linkedinUsername: "pooja-bhatt-01b59482",
   summary: "Results-driven MIS/BI Reports and Dashboard Specialist with 10+ years of cross-industry experience spanning logistics, retail, luxury automotive, e-commerce, and higher education. Expert in architecting automated reporting pipelines, Power BI executive dashboards, ERP integrations, and billing audits. Passionate corporate trainer who has upskilled 1,000+ students and professionals in Advanced Excel, DAX, and Power BI.",
   resumeUrl: "/Pooja_Bhatt_Resume.pdf",
 };

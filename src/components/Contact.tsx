@@ -104,7 +104,7 @@ export const Contact: React.FC = () => {
                 rel="noopener noreferrer"
                 className="text-lg font-extrabold text-slate-900 dark:text-white hover:text-[#0A66C2] dark:hover:text-[#38bdf8] transition-colors flex items-center gap-1.5"
               >
-                <span>linkedin.com/in/pooja-bhatt-mis</span>
+                <span>linkedin.com/in/pooja-bhatt-01b59482</span>
                 <ExternalLink className="w-4 h-4 text-slate-400" />
               </a>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-2">
