@@ -14,7 +14,7 @@ export interface SkillCategory {
   title: string;
   iconName: string;
   description: string;
-  proficiency: number; // 0-100
+  level: string; // e.g. "Mastery", "Specialist", "Auditing", etc.
   skills: string[];
   tags: string[];
 }

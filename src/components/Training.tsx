@@ -139,7 +139,7 @@ export const Training: React.FC = () => {
               "Pooja Bhatt's training sessions at Chitkara and CGC have consistently bridged the critical gap between academic spreadsheets and corporate business intelligence. Her practical case studies give students authentic placement confidence."
             </blockquote>
             <p className="text-xs font-mono font-bold text-orange-600 dark:text-orange-400 uppercase tracking-wide">
-              Academic & Corporate Feedback &bull; 99.4% Cohort Satisfaction
+              Academic & Corporate Feedback &bull; Verified Institutional Endorsement
             </p>
           </div>
         </div>

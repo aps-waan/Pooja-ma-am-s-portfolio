@@ -32,9 +32,9 @@ export const keyMetrics = [
     subtext: "Mercedes-Benz, Tanishq, CGC, Chitkara",
   },
   {
-    value: "99.8%",
-    suffix: "Accuracy",
-    label: "Billing & Audit Precision",
+    value: "100%",
+    suffix: "Verified",
+    label: "Audit & SLA Compliance",
     subtext: "FedEx, UPS & ERP reconciliation",
   },
 ];
@@ -206,8 +206,8 @@ export const caseStudies: CaseStudy[] = [
     challenge: "US e-commerce and logistics enterprise accounts were incurring recurring invoice discrepancies across thousands of monthly FedEx and UPS shipments due to unvetted dimensional surcharges, rate classification errors, and duplicate billing charges.",
     solution: "Designed and implemented automated multi-tier billing audit and reconciliation sheets. Standardized data validation workflows that cross-checked carrier manifests against contracted tariffs, and established automated exception tracking for Accounts and Finance leadership.",
     impactMetrics: [
-      { metric: "99.85%", label: "Billing Audit Accuracy" },
-      { metric: "65%", label: "Reduction in Dispute Cycles" },
+      { metric: "Verified", label: "Billing Audit Accuracy" },
+      { metric: "Automated", label: "Dispute & Audit Pipeline" },
       { metric: "14,000+", label: "Monthly Shipments Audited" },
       { metric: "Zero-Error", label: "Accounts Reconciliation" },
     ],
@@ -223,7 +223,7 @@ export const caseStudies: CaseStudy[] = [
     solution: "Architected comprehensive daily, weekly, and monthly sales and service MIS reporting systems. Integrated showroom enquiry tracking with conversion funnels and designed polished executive decks for monthly board reviews.",
     impactMetrics: [
       { metric: "Daily", label: "Automated Executive Reporting" },
-      { metric: "100%", label: "Showroom Enquiry Tracking" },
+      { metric: "Complete", label: "Showroom Enquiry Tracking" },
       { metric: "Service Bay", label: "Turnaround Optimization" },
       { metric: "Executive", label: "Management Review Decks" },
     ],
@@ -255,7 +255,7 @@ export const caseStudies: CaseStudy[] = [
     solution: "Designed and delivered intensive, practical training modules centered on real-world datasets from retail, logistics, and automotive sectors. Taught Power Query, Power Pivot, DAX, and executive Power BI storytelling, paired with mock corporate placement problem-solving tests.",
     impactMetrics: [
       { metric: "1,000+", label: "Students & Executives Trained" },
-      { metric: "99.4%", label: "Trainer Satisfaction Rating" },
+      { metric: "Top-Rated", label: "Trainer Satisfaction Rating" },
       { metric: "Placement-Ready", label: "Industry Case Studies" },
       { metric: "Hands-on", label: "DAX & Power Query Mastery" },
     ],
@@ -268,7 +268,7 @@ export const skillCategories: SkillCategory[] = [
     title: "Advanced Excel & Automation",
     iconName: "FileSpreadsheet",
     description: "Deep expertise in turning chaotic, multi-source spreadsheets into reliable, automated analytical frameworks.",
-    proficiency: 98,
+    level: "Expert",
     skills: [
       "Power Query (M Language) & ETL",
       "Power Pivot & Relational Modeling",
@@ -283,7 +283,7 @@ export const skillCategories: SkillCategory[] = [
     title: "Power BI & Executive Reporting",
     iconName: "BarChart3",
     description: "Architecting interactive visual command centers that convert complex operational metrics into clear C-suite decisions.",
-    proficiency: 95,
+    level: "Specialist",
     skills: [
       "Interactive Power BI Report Development",
       "Star Schema & Relational Modeling",
@@ -298,7 +298,7 @@ export const skillCategories: SkillCategory[] = [
     title: "Billing, Reconciliation & Financial MIS",
     iconName: "ReceiptText",
     description: "Rigorous financial accuracy, auditing high-volume freight invoices and building discrepancy tracking systems.",
-    proficiency: 96,
+    level: "Auditor",
     skills: [
       "FedEx & UPS Carrier Invoice Auditing",
       "Accounts Discrepancy & Variance Tracking",
@@ -313,7 +313,7 @@ export const skillCategories: SkillCategory[] = [
     title: "ERP Systems & Enterprise Tooling",
     iconName: "Server",
     description: "Hands-on operational fluency with global ERP platforms, inventory ledgers, and database management.",
-    proficiency: 92,
+    level: "Fluent",
     skills: [
       "SAP (Inventory & Stock Aging Reports)",
       "Tally ERP (Payroll & Accounting)",
@@ -328,7 +328,7 @@ export const skillCategories: SkillCategory[] = [
     title: "Corporate Training & Academic Pedagogy",
     iconName: "GraduationCap",
     description: "Experienced university guest faculty and corporate mentor who turns beginners into placement-ready data analysts.",
-    proficiency: 98,
+    level: "Faculty",
     skills: [
       "Classroom & Live Hands-on Workshops",
       "Placement-Oriented Curriculum Design",
@@ -343,7 +343,7 @@ export const skillCategories: SkillCategory[] = [
     title: "Data Operations & Quality Assurance",
     iconName: "CheckCircle2",
     description: "Systematic data cleansing protocols that eliminate anomalies before reports reach executive tables.",
-    proficiency: 94,
+    level: "Specialist",
     skills: [
       "Data Cleaning & Anomaly Detection",
       "Input Validation & Exception Trapping",
@@ -526,7 +526,7 @@ export const trainingPrograms: TrainingProgram[] = [
       "Data Cleaning & Anomaly Detection Techniques",
     ],
     keyOutcomes: [
-      "Cut manual report compilation time by up to 80%",
+      "Automate manual report compilation workflows",
       "Eliminate formula corruption through standardized Power Query flows",
       "Build placement-ready corporate financial and operational models",
     ],

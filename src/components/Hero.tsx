@@ -109,46 +109,34 @@ export const Hero: React.FC = () => {
                 </div>
               </div>
 
-              {/* Verified Competencies */}
-              <div className="space-y-4 mb-6">
-                <div>
-                  <div className="flex justify-between text-xs font-bold mb-1.5">
-                    <span className="text-slate-800 dark:text-slate-200">Advanced Excel & Power Query Automation</span>
-                    <span className="text-orange-600 dark:text-orange-400 font-mono">98%</span>
-                  </div>
-                  <div className="w-full h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
-                    <div className="h-full theme-primary-bg rounded-full" style={{ width: '98%' }} />
-                  </div>
+              {/* Core Competency Badges */}
+              <div className="space-y-2.5 mb-6">
+                <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800 flex items-center justify-between">
+                  <span className="text-xs font-bold text-slate-800 dark:text-slate-200">Advanced Excel & Power Query</span>
+                  <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-bold bg-orange-100 dark:bg-orange-500/10 text-orange-700 dark:text-orange-400 border border-orange-200 dark:border-orange-500/20">
+                    Expert
+                  </span>
                 </div>
 
-                <div>
-                  <div className="flex justify-between text-xs font-bold mb-1.5">
-                    <span className="text-slate-800 dark:text-slate-200">Power BI & Executive MIS Reporting</span>
-                    <span className="text-orange-600 dark:text-orange-400 font-mono">95%</span>
-                  </div>
-                  <div className="w-full h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
-                    <div className="h-full theme-primary-bg rounded-full" style={{ width: '95%' }} />
-                  </div>
+                <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800 flex items-center justify-between">
+                  <span className="text-xs font-bold text-slate-800 dark:text-slate-200">Power BI & MIS Dashboards</span>
+                  <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-bold bg-amber-100 dark:bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-500/20">
+                    Specialist
+                  </span>
                 </div>
 
-                <div>
-                  <div className="flex justify-between text-xs font-bold mb-1.5">
-                    <span className="text-slate-800 dark:text-slate-200">Carrier Billing Audits (FedEx / UPS)</span>
-                    <span className="text-orange-600 dark:text-orange-400 font-mono">96%</span>
-                  </div>
-                  <div className="w-full h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
-                    <div className="h-full theme-primary-bg rounded-full" style={{ width: '96%' }} />
-                  </div>
+                <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800 flex items-center justify-between">
+                  <span className="text-xs font-bold text-slate-800 dark:text-slate-200">Carrier Billing Audits (FedEx / UPS)</span>
+                  <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-bold bg-emerald-100 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20">
+                    Audited
+                  </span>
                 </div>
 
-                <div>
-                  <div className="flex justify-between text-xs font-bold mb-1.5">
-                    <span className="text-slate-800 dark:text-slate-200">Corporate & Higher Ed Training (1,000+ Students)</span>
-                    <span className="text-orange-600 dark:text-orange-400 font-mono">98%</span>
-                  </div>
-                  <div className="w-full h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
-                    <div className="h-full theme-primary-bg rounded-full" style={{ width: '98%' }} />
-                  </div>
+                <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800 flex items-center justify-between">
+                  <span className="text-xs font-bold text-slate-800 dark:text-slate-200">Corporate & University Training</span>
+                  <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-bold bg-blue-100 dark:bg-blue-500/10 text-blue-700 dark:text-blue-400 border border-blue-200 dark:border-blue-500/20">
+                    1,000+ Alumni
+                  </span>
                 </div>
               </div>
 

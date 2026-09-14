@@ -84,11 +84,8 @@ export const Skills: React.FC = () => {
                     {iconMap[category.iconName] || <Layers className="w-6 h-6" />}
                   </div>
                   <div className="text-right">
-                    <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400 block font-semibold uppercase">
-                      Proficiency
-                    </span>
-                    <span className="text-base font-mono font-extrabold text-slate-900 dark:text-white">
-                      {category.proficiency}%
+                    <span className="px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-orange-100 dark:bg-orange-500/10 text-orange-700 dark:text-orange-400 border border-orange-200 dark:border-orange-500/20">
+                      {category.level}
                     </span>
                   </div>
                 </div>
