@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Download, Sun, Moon, Menu, X, BarChart3, ArrowRight } from 'lucide-react';
+import { Download, Sun, Moon, Menu, X, BarChart3 } from 'lucide-react';
 import { LinkedInIcon } from './icons/LinkedInIcon';
 import { personalInfo } from '../data/portfolioData';
 
@@ -39,13 +39,13 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Brand Logo */}
-        <a href="#hero" className="flex items-center gap-3 group">
+        <a href="#hero" className="flex items-center gap-3 group shrink-0">
           <div className="w-10 h-10 rounded-xl theme-btn-gradient flex items-center justify-center text-white font-bold text-lg shadow-md group-hover:scale-105 transition-transform">
             <BarChart3 className="w-5 h-5" />
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <span className="font-extrabold text-lg sm:text-xl tracking-tight text-slate-900 dark:text-white transition-colors">
+              <span className="font-extrabold text-lg sm:text-xl tracking-tight text-slate-900 dark:text-white transition-colors whitespace-nowrap">
                 {personalInfo.name}
               </span>
               <span className="relative flex h-2 w-2">
@@ -53,19 +53,19 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
               </span>
             </div>
-            <p className="text-[11px] font-mono text-orange-600 dark:text-orange-400 font-semibold tracking-wide">
+            <p className="text-[11px] font-mono text-orange-600 dark:text-orange-400 font-semibold tracking-wide whitespace-nowrap">
               MIS/BI Reports & Dashboard Specialist
             </p>
           </div>
         </a>
 
         {/* Desktop Nav Links */}
-        <nav className="hidden lg:flex items-center gap-7">
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-orange-600 dark:hover:text-orange-400 transition-colors"
+              className="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-orange-600 dark:hover:text-orange-400 transition-colors whitespace-nowrap"
             >
               {link.name}
             </a>
@@ -73,12 +73,12 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
         </nav>
 
         {/* Action Controls */}
-        <div className="hidden sm:flex items-center gap-2.5">
+        <div className="hidden sm:flex items-center gap-3">
           {/* Theme Switcher */}
           <button
             onClick={toggleDarkMode}
             aria-label="Toggle dark/light mode"
-            className="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:text-orange-500 hover:border-orange-500/40 transition-all shadow-sm"
+            className="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:text-orange-500 hover:border-orange-500/40 transition-all shadow-sm shrink-0"
             title={darkMode ? "Switch to Executive Light Mode" : "Switch to Sleek Dark Mode"}
           >
             {darkMode ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-slate-700" />}
@@ -89,30 +89,21 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
             href={personalInfo.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:text-[#0A66C2] dark:hover:text-[#38bdf8] hover:border-[#0A66C2]/40 transition-all shadow-sm"
+            className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:text-[#0A66C2] dark:hover:text-[#38bdf8] hover:border-[#0A66C2]/40 transition-all shadow-sm shrink-0"
             title="Connect on LinkedIn"
           >
             <LinkedInIcon className="w-3.5 h-3.5 text-[#0A66C2] dark:text-[#38bdf8]" />
-            <span className="hidden xl:inline">LinkedIn</span>
+            <span>LinkedIn</span>
           </a>
 
           {/* Resume Download */}
           <a
             href={personalInfo.resumeUrl}
             download="Pooja_Bhatt_Resume.pdf"
-            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:border-orange-500 hover:text-orange-600 dark:hover:text-orange-400 transition-all shadow-sm"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:border-orange-500 hover:text-orange-600 dark:hover:text-orange-400 transition-all shadow-sm shrink-0"
           >
             <Download className="w-3.5 h-3.5 text-orange-500" />
             <span>Resume</span>
-          </a>
-
-          {/* Book Consultation */}
-          <a
-            href="#contact"
-            className="theme-btn-gradient inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-white shadow-md transition-all"
-          >
-            <span>Book Consultation</span>
-            <ArrowRight className="w-3.5 h-3.5" />
           </a>
         </div>
 
@@ -162,13 +153,6 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
               className="flex items-center justify-center gap-2 py-2.5 rounded-xl border border-orange-500/40 text-orange-600 dark:text-orange-400 text-sm font-bold"
             >
               <Download className="w-4 h-4" /> Download Resume PDF
-            </a>
-            <a
-              href="#contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className="theme-btn-gradient flex items-center justify-center gap-2 py-2.5 rounded-xl text-white text-sm font-bold shadow-md"
-            >
-              Book Consultation <ArrowRight className="w-4 h-4" />
             </a>
           </div>
         </div>
