@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary-color: #f97316;
+    --secondary-color: #ea580c;
+    --accent-color: #fb923c;
+    --glow-color: rgba(249, 115, 22, 0.35);
+    --text-accent: #fdba74;
+  }
+
+  body {
+    transition: background-color 0.25s ease, color 0.25s ease;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Dynamic theme accent classes */
+.theme-primary-bg {
+  background-color: var(--primary-color) !important;
+}
+
+.theme-primary-text {
+  color: var(--primary-color) !important;
+}
+
+.theme-primary-border {
+  border-color: var(--primary-color) !important;
+}
+
+.theme-btn-gradient {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
+  box-shadow: 0 8px 24px -4px var(--glow-color) !important;
+}
+
+.theme-btn-gradient:hover {
+  box-shadow: 0 12px 30px -2px var(--glow-color) !important;
+  transform: translateY(-1px);
+}
+
+/* Glassmorphic card styling that adapts flawlessly to light & dark mode */
+.glass-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark .glass-card {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.6) 0%, rgba(17, 24, 39, 0.8) 100%);
+  border: 1px solid rgba(248, 250, 252, 0.08);
+  box-shadow: none;
+}
+
+.glass-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 12px 32px -8px var(--glow-color);
+  transform: translateY(-2px);
+}
+
+/* Subtle background grid */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+}
+
+.dark .bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #0B0F17;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #27354A;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
