@@ -2,13 +2,13 @@ import { ExperienceItem, SkillCategory, TrainingProgram, EducationItem, CaseStud
 
 export const personalInfo = {
   name: "Pooja Bhatt",
-  title: "Senior MIS Analyst | Data Analyst | Corporate Trainer",
+  title: "MIS/BI Reports & Dashboard Specialist | Data Analyst | Corporate Trainer",
   specialization: "Advanced Excel, Power BI & Enterprise ERP Systems",
   location: "Mohali, Punjab, India",
-  phone: "+91 9463088367",
   email: "official.poojabhatt90@gmail.com",
-  whatsapp: "https://wa.me/919463088367?text=Hi%20Pooja,%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect%20regarding%20corporate%20training%20or%20an%20MIS%20consultation.",
-  summary: "Results-driven MIS and Data Analyst with 10+ years of cross-industry experience spanning logistics, retail, luxury automotive, e-commerce, and higher education. Expert in architecting automated reporting pipelines, Power BI executive dashboards, ERP integrations, and billing audits. Passionate corporate trainer who has upskilled 1,000+ students and professionals in Advanced Excel, DAX, and Power BI.",
+  linkedin: "https://www.linkedin.com/in/pooja-bhatt-mis",
+  linkedinUsername: "pooja-bhatt-mis",
+  summary: "Results-driven MIS/BI Reports and Dashboard Specialist with 10+ years of cross-industry experience spanning logistics, retail, luxury automotive, e-commerce, and higher education. Expert in architecting automated reporting pipelines, Power BI executive dashboards, ERP integrations, and billing audits. Passionate corporate trainer who has upskilled 1,000+ students and professionals in Advanced Excel, DAX, and Power BI.",
   resumeUrl: "/Pooja_Bhatt_Resume.pdf",
 };
 

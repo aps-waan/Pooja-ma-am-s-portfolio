@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, Download, Database, Sparkles, CheckCircle2 } from 'lucide-react';
+import { LinkedInIcon } from './icons/LinkedInIcon';
 import { personalInfo, keyMetrics } from '../data/portfolioData';
 
 export const Hero: React.FC = () => {
@@ -16,7 +17,7 @@ export const Hero: React.FC = () => {
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100 dark:bg-orange-500/10 border border-orange-300 dark:border-orange-500/25 w-fit">
               <Sparkles className="w-4 h-4 text-orange-600 dark:text-orange-400" />
               <span className="text-xs font-mono font-bold tracking-wide text-orange-700 dark:text-orange-300 uppercase">
-                10+ Years Enterprise Data & MIS Experience
+                10+ Years MIS/BI & Data Leadership
               </span>
             </div>
 
@@ -31,11 +32,11 @@ export const Hero: React.FC = () => {
 
             {/* Subtitle / Bio */}
             <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300 max-w-2xl leading-relaxed">
-              Hi, I'm <strong className="text-slate-900 dark:text-white font-bold">{personalInfo.name}</strong>. Senior MIS Analyst, Data Analyst & Corporate Trainer specializing in <span className="font-semibold text-orange-600 dark:text-orange-400">Advanced Excel, Power BI, DAX & ERP Systems</span>. Over the past decade, I have optimized reporting frameworks for enterprise leaders including Mercedes-Benz, Tanishq, and ShipHaven US Clients, while training 1,000+ university students and corporate professionals.
+              Hi, I'm <strong className="text-slate-900 dark:text-white font-bold">{personalInfo.name}</strong>. MIS/BI reports and dashboard specialist & Corporate Trainer specializing in <span className="font-semibold text-orange-600 dark:text-orange-400">Advanced Excel, Power BI, DAX & ERP Systems</span>. Over the past decade, I have optimized reporting frameworks for enterprise leaders including Mercedes-Benz, Tanishq, and ShipHaven US Clients, while training 1,000+ university students and corporate professionals.
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="flex flex-wrap items-center gap-3.5 pt-2">
               <a
                 href="#projects"
                 className="theme-btn-gradient px-6 sm:px-7 py-3.5 rounded-xl text-white font-bold text-sm flex items-center gap-2.5 transition-all shadow-md"
@@ -45,19 +46,22 @@ export const Hero: React.FC = () => {
               </a>
 
               <a
-                href={personalInfo.resumeUrl}
-                download="Pooja_Bhatt_Resume.pdf"
-                className="px-6 py-3.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 hover:border-orange-500 hover:text-orange-600 dark:hover:text-orange-400 font-bold text-sm flex items-center gap-2 transition-all shadow-sm"
+                href={personalInfo.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-3.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 hover:text-[#0A66C2] dark:hover:text-[#38bdf8] hover:border-[#0A66C2]/40 font-bold text-sm flex items-center gap-2 transition-all shadow-sm"
               >
-                <Download className="w-4 h-4 text-orange-500" />
-                <span>Download Resume (PDF)</span>
+                <LinkedInIcon className="w-4 h-4 text-[#0A66C2] dark:text-[#38bdf8]" />
+                <span>Connect on LinkedIn</span>
               </a>
 
               <a
-                href="#training"
-                className="px-4 py-3.5 rounded-xl text-slate-600 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-400 text-sm font-semibold transition-colors"
+                href={personalInfo.resumeUrl}
+                download="Pooja_Bhatt_Resume.pdf"
+                className="px-5 py-3.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 hover:border-orange-500 hover:text-orange-600 dark:hover:text-orange-400 font-bold text-sm flex items-center gap-2 transition-all shadow-sm"
               >
-                Corporate Training Programs →
+                <Download className="w-4 h-4 text-orange-500" />
+                <span>Resume (PDF)</span>
               </a>
             </div>
 
@@ -100,7 +104,7 @@ export const Hero: React.FC = () => {
                     M.Sc. IT &bull; B.Com (Professional)
                   </p>
                   <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                    Mohali, Punjab &bull; Corporate Trainer & MIS Lead
+                    Mohali, Punjab &bull; MIS/BI Reports & Dashboard Specialist
                   </p>
                 </div>
               </div>

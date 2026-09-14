@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Download, Sun, Moon, Menu, X, BarChart3, ArrowRight, Palette } from 'lucide-react';
+import { LinkedInIcon } from './icons/LinkedInIcon';
 import { personalInfo } from '../data/portfolioData';
 
 interface NavbarProps {
@@ -54,7 +55,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode, openPa
               </span>
             </div>
             <p className="text-[11px] font-mono text-orange-600 dark:text-orange-400 font-semibold tracking-wide">
-              MIS & Data Analyst &bull; Trainer
+              MIS/BI Reports & Dashboard Specialist
             </p>
           </div>
         </a>
@@ -94,6 +95,18 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode, openPa
           >
             {darkMode ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-slate-700" />}
           </button>
+
+          {/* LinkedIn Connect */}
+          <a
+            href={personalInfo.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:text-[#0A66C2] dark:hover:text-[#38bdf8] hover:border-[#0A66C2]/40 transition-all shadow-sm"
+            title="Connect on LinkedIn"
+          >
+            <LinkedInIcon className="w-3.5 h-3.5 text-[#0A66C2] dark:text-[#38bdf8]" />
+            <span className="hidden xl:inline">LinkedIn</span>
+          </a>
 
           {/* Resume Download */}
           <a
@@ -163,6 +176,14 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode, openPa
             >
               <Palette className="w-4 h-4 text-orange-500" /> Change Color Palette (8 Curated)
             </button>
+            <a
+              href={personalInfo.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-200 text-sm font-bold hover:text-[#0A66C2]"
+            >
+              <LinkedInIcon className="w-4 h-4 text-[#0A66C2] dark:text-[#38bdf8]" /> Connect on LinkedIn
+            </a>
             <a
               href={personalInfo.resumeUrl}
               download="Pooja_Bhatt_Resume.pdf"

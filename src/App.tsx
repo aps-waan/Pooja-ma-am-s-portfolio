@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { MessageCircle, Palette } from 'lucide-react';
+import { Palette } from 'lucide-react';
+import { LinkedInIcon } from './components/icons/LinkedInIcon';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Projects } from './components/Projects';
@@ -93,17 +94,17 @@ export const App: React.FC = () => {
         </span>
       </button>
 
-      {/* Floating WhatsApp Quick-Connect Button */}
+      {/* Floating LinkedIn Quick-Connect Button */}
       <a
-        href={personalInfo.whatsapp}
+        href={personalInfo.linkedin}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Chat with Pooja on WhatsApp"
-        className="fixed bottom-6 right-6 z-40 p-3.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white shadow-xl shadow-emerald-600/30 hover:scale-110 active:scale-95 transition-all flex items-center justify-center group"
+        aria-label="Connect with Pooja on LinkedIn"
+        className="fixed bottom-6 right-6 z-40 p-3.5 rounded-full bg-[#0A66C2] hover:bg-[#004182] text-white shadow-xl shadow-[#0A66C2]/30 hover:scale-110 active:scale-95 transition-all flex items-center justify-center group"
       >
-        <MessageCircle className="w-6 h-6" />
+        <LinkedInIcon className="w-6 h-6" />
         <span className="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 ease-in-out font-bold text-xs pl-0 group-hover:pl-2">
-          Chat on WhatsApp
+          Connect on LinkedIn
         </span>
       </a>
 

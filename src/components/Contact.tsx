@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, MessageCircle, Copy, Check, Sparkles, Clock } from 'lucide-react';
+import { Mail, MapPin, Send, Copy, Check, Sparkles, Clock } from 'lucide-react';
+import { LinkedInIcon } from './icons/LinkedInIcon';
 import { personalInfo } from '../data/portfolioData';
 
 export const Contact: React.FC = () => {
@@ -8,7 +9,7 @@ export const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
+    organization: '',
     service: 'Corporate Training Program',
     message: '',
   });
@@ -75,33 +76,35 @@ export const Contact: React.FC = () => {
                 </button>
               </div>
 
-              {/* WhatsApp & Phone Card */}
+              {/* LinkedIn Connect Card */}
               <div className="p-4 rounded-2xl glass-card border border-slate-200 dark:border-slate-800 flex items-center justify-between shadow-sm">
                 <div className="flex items-center gap-3.5">
-                  <div className="w-11 h-11 rounded-xl bg-emerald-100 dark:bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
-                    <Phone className="w-5 h-5" />
+                  <div className="w-11 h-11 rounded-xl bg-[#0A66C2]/10 text-[#0A66C2] dark:text-[#38bdf8] flex items-center justify-center shrink-0">
+                    <LinkedInIcon className="w-5 h-5" />
                   </div>
                   <div>
                     <span className="text-xs font-mono text-slate-500 dark:text-slate-400 block font-semibold">
-                      Phone & WhatsApp
+                      LinkedIn Connect
                     </span>
                     <a
-                      href={`tel:${personalInfo.phone}`}
-                      className="text-sm font-bold text-slate-900 dark:text-white hover:text-orange-500 transition-colors"
+                      href={personalInfo.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm font-bold text-slate-900 dark:text-white hover:text-[#0A66C2] dark:hover:text-[#38bdf8] transition-colors"
                     >
-                      {personalInfo.phone}
+                      Connect on LinkedIn
                     </a>
                   </div>
                 </div>
 
                 <a
-                  href={personalInfo.whatsapp}
+                  href={personalInfo.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-3.5 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-all flex items-center gap-1.5 shadow-md"
+                  className="px-3.5 py-1.5 rounded-xl bg-[#0A66C2] hover:bg-[#004182] text-white text-xs font-bold transition-all flex items-center gap-1.5 shadow-md"
                 >
-                  <MessageCircle className="w-3.5 h-3.5" />
-                  <span>Chat</span>
+                  <LinkedInIcon className="w-3.5 h-3.5" />
+                  <span>Connect</span>
                 </a>
               </div>
 
@@ -145,22 +148,22 @@ export const Contact: React.FC = () => {
                     Message Prepared!
                   </h3>
                   <p className="text-sm text-slate-600 dark:text-slate-300 max-w-md mx-auto">
-                    Thank you, <strong className="text-slate-900 dark:text-white">{formData.name}</strong>. Connect directly via email or WhatsApp below for the fastest response:
+                    Thank you, <strong className="text-slate-900 dark:text-white">{formData.name}</strong>. Connect directly via email or LinkedIn below for the fastest response:
                   </p>
                   <div className="flex flex-wrap justify-center gap-3 pt-4">
                     <a
-                      href={`mailto:${personalInfo.email}?subject=${encodeURIComponent(formData.service + ' - ' + formData.name)}&body=${encodeURIComponent(formData.message + '\n\nPhone: ' + formData.phone)}`}
+                      href={`mailto:${personalInfo.email}?subject=${encodeURIComponent(formData.service + ' - ' + formData.name)}&body=${encodeURIComponent(formData.message + (formData.organization ? '\n\nOrganization: ' + formData.organization : ''))}`}
                       className="theme-btn-gradient px-5 py-2.5 rounded-xl text-white text-xs font-bold flex items-center gap-2 shadow-md"
                     >
                       <Mail className="w-4 h-4" /> Open In Email Client
                     </a>
                     <a
-                      href={personalInfo.whatsapp}
+                      href={personalInfo.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold flex items-center gap-2 shadow-md"
+                      className="px-5 py-2.5 rounded-xl bg-[#0A66C2] hover:bg-[#004182] text-white text-xs font-bold flex items-center gap-2 shadow-md"
                     >
-                      <MessageCircle className="w-4 h-4" /> Chat on WhatsApp
+                      <LinkedInIcon className="w-4 h-4" /> Connect on LinkedIn
                     </a>
                     <button
                       onClick={() => setFormSubmitted(false)}
@@ -205,13 +208,13 @@ export const Contact: React.FC = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-xs font-mono font-bold text-slate-700 dark:text-slate-300 mb-2 uppercase">
-                        Phone / WhatsApp (Optional)
+                        Organization / University
                       </label>
                       <input
-                        type="tel"
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="+91 98765 43210"
+                        type="text"
+                        value={formData.organization}
+                        onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
+                        placeholder="e.g. CGC / Chitkara / Enterprise"
                         className="w-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-all font-medium"
                       />
                     </div>

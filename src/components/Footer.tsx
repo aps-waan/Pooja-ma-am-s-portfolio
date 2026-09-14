@@ -1,5 +1,6 @@
 import React from 'react';
 import { BarChart3, Download, ArrowUp } from 'lucide-react';
+import { LinkedInIcon } from './icons/LinkedInIcon';
 import { personalInfo } from '../data/portfolioData';
 
 export const Footer: React.FC = () => {
@@ -37,8 +38,19 @@ export const Footer: React.FC = () => {
             <a href="#contact" className="hover:text-orange-500 transition-colors">Contact</a>
           </div>
 
-          {/* Resume & Scroll Top */}
+          {/* LinkedIn, Resume & Scroll Top */}
           <div className="flex items-center gap-3">
+            <a
+              href={personalInfo.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3.5 py-2 rounded-xl text-xs font-bold border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-200 hover:text-[#0A66C2] dark:hover:text-[#38bdf8] flex items-center gap-1.5 transition-colors shadow-sm"
+              title="LinkedIn Profile"
+            >
+              <LinkedInIcon className="w-3.5 h-3.5 text-[#0A66C2] dark:text-[#38bdf8]" />
+              <span>LinkedIn</span>
+            </a>
+
             <a
               href={personalInfo.resumeUrl}
               download="Pooja_Bhatt_Resume.pdf"
@@ -64,7 +76,7 @@ export const Footer: React.FC = () => {
             &copy; {new Date().getFullYear()} {personalInfo.name}. All rights reserved. Mohali, Punjab.
           </p>
           <p className="flex items-center gap-1 font-mono text-[11px]">
-            Senior MIS &bull; Power BI &bull; Advanced Excel &bull; Corporate Training
+            MIS/BI Reports & Dashboard Specialist &bull; Power BI &bull; Advanced Excel &bull; Corporate Training
           </p>
         </div>
       </div>
