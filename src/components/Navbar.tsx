@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Download, Sun, Moon, Menu, X, BarChart3, ArrowRight, Palette } from 'lucide-react';
+import { Download, Sun, Moon, Menu, X, BarChart3, ArrowRight } from 'lucide-react';
 import { LinkedInIcon } from './icons/LinkedInIcon';
 import { personalInfo } from '../data/portfolioData';
 
 interface NavbarProps {
   darkMode: boolean;
   toggleDarkMode: () => void;
-  openPalette: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode, openPalette }) => {
+export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -75,17 +74,6 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode, openPa
 
         {/* Action Controls */}
         <div className="hidden sm:flex items-center gap-2.5">
-          {/* Palette Customizer Button */}
-          <button
-            onClick={openPalette}
-            aria-label="Customize theme colors"
-            className="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:text-orange-500 hover:border-orange-500/40 transition-all flex items-center gap-1.5 text-xs font-semibold shadow-sm"
-            title="Choose Accent Colors (8 options)"
-          >
-            <Palette className="w-4 h-4 text-orange-500" />
-            <span className="hidden xl:inline">Colors</span>
-          </button>
-
           {/* Theme Switcher */}
           <button
             onClick={toggleDarkMode}
@@ -131,13 +119,6 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode, openPa
         {/* Mobile controls */}
         <div className="flex sm:hidden items-center gap-2">
           <button
-            onClick={openPalette}
-            className="p-2 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300"
-            title="Colors"
-          >
-            <Palette className="w-4 h-4 text-orange-500" />
-          </button>
-          <button
             onClick={toggleDarkMode}
             className="p-2 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300"
           >
@@ -167,15 +148,6 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode, openPa
             </a>
           ))}
           <div className="pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-3">
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                openPalette();
-              }}
-              className="flex items-center justify-center gap-2 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-200 text-sm font-bold"
-            >
-              <Palette className="w-4 h-4 text-orange-500" /> Change Color Palette (8 Curated)
-            </button>
             <a
               href={personalInfo.linkedin}
               target="_blank"

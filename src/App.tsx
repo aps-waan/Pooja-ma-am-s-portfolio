@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Palette } from 'lucide-react';
 import { LinkedInIcon } from './components/icons/LinkedInIcon';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
@@ -10,9 +9,7 @@ import { Training } from './components/Training';
 import { Education } from './components/Education';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
-import { ThemeCustomizer } from './components/ThemeCustomizer';
 import { personalInfo, colorThemes } from './data/portfolioData';
-import { ColorThemeOption } from './types/portfolio';
 
 export const App: React.FC = () => {
   // Light mode first, dark mode second as requested!
@@ -21,18 +18,12 @@ export const App: React.FC = () => {
     return saved ? saved === 'dark' : false;
   });
 
-  const [currentTheme, setCurrentTheme] = useState<ColorThemeOption>(() => {
-    const savedId = localStorage.getItem('pooja_color_id');
-    return colorThemes.find(t => t.id === savedId) || colorThemes[0];
-  });
-
-  const [paletteOpen, setPaletteOpen] = useState<boolean>(false);
+  const defaultTheme = colorThemes[0]; // Sunset Orange (Lucky Color)
 
   // Apply dark/light class and dynamic CSS variables on theme changes
   useEffect(() => {
     const root = document.documentElement;
     localStorage.setItem('pooja_theme_mode', darkMode ? 'dark' : 'light');
-    localStorage.setItem('pooja_color_id', currentTheme.id);
     
     if (darkMode) {
       root.classList.add('dark');
@@ -42,14 +33,14 @@ export const App: React.FC = () => {
       root.classList.remove('dark');
     }
 
-    // Set dynamic CSS properties based on current mode and selected color palette
-    const themeColors = darkMode ? currentTheme.dark : currentTheme.light;
+    // Set dynamic CSS properties based on current mode and default orange color palette
+    const themeColors = darkMode ? defaultTheme.dark : defaultTheme.light;
     root.style.setProperty('--primary-color', themeColors.primary);
     root.style.setProperty('--secondary-color', themeColors.secondary);
     root.style.setProperty('--accent-color', themeColors.accent);
     root.style.setProperty('--glow-color', themeColors.glow);
     root.style.setProperty('--text-accent', themeColors.text);
-  }, [darkMode, currentTheme]);
+  }, [darkMode]);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -64,7 +55,6 @@ export const App: React.FC = () => {
       <Navbar
         darkMode={darkMode}
         toggleDarkMode={toggleDarkMode}
-        openPalette={() => setPaletteOpen(true)}
       />
 
       {/* Main Content */}
@@ -81,19 +71,6 @@ export const App: React.FC = () => {
       {/* Footer */}
       <Footer />
 
-      {/* Floating Theme / Palette Quick Trigger Button */}
-      <button
-        onClick={() => setPaletteOpen(true)}
-        aria-label="Customize colors"
-        className="fixed bottom-24 right-6 z-40 p-3 rounded-full bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-200 shadow-xl hover:scale-110 active:scale-95 transition-all flex items-center justify-center group"
-        title="Choose Theme & Color"
-      >
-        <Palette className="w-5 h-5 text-orange-500" />
-        <span className="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 ease-in-out text-xs font-bold pl-0 group-hover:pl-2">
-          Themes ({currentTheme.name})
-        </span>
-      </button>
-
       {/* Floating LinkedIn Quick-Connect Button */}
       <a
         href={personalInfo.linkedin}
@@ -107,16 +84,6 @@ export const App: React.FC = () => {
           Connect on LinkedIn
         </span>
       </a>
-
-      {/* Theme Customizer Modal */}
-      <ThemeCustomizer
-        isOpen={paletteOpen}
-        onClose={() => setPaletteOpen(false)}
-        currentTheme={currentTheme}
-        setTheme={setCurrentTheme}
-        darkMode={darkMode}
-        setDarkMode={setDarkMode}
-      />
     </div>
   );
 };
