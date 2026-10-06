@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { BarChart3, Download, ArrowUp } from 'lucide-react';
 import { LinkedInIcon } from './icons/LinkedInIcon';
 import { personalInfo } from '../data/portfolioData';
@@ -14,31 +15,29 @@ export const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-10 border-b border-slate-100 dark:border-slate-800">
           {/* Brand & Summary */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left gap-2">
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl theme-btn-gradient flex items-center justify-center text-white font-bold text-sm shadow-md">
+            <Link to="/" className="flex items-center gap-2.5 group">
+              <div className="w-8 h-8 rounded-xl theme-btn-gradient flex items-center justify-center text-white font-bold text-sm shadow-md group-hover:scale-105 transition-transform">
                 <BarChart3 className="w-4 h-4" />
               </div>
               <span className="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                 {personalInfo.name}
               </span>
-            </div>
+            </Link>
             <p className="text-xs text-slate-600 dark:text-slate-400 max-w-sm">
               {personalInfo.title} &bull; {personalInfo.specialization}
             </p>
           </div>
 
-          {/* Quick links */}
+          {/* Router Nav links */}
           <div className="flex flex-wrap justify-center gap-6 text-xs font-bold text-slate-600 dark:text-slate-400">
-            <a href="#hero" className="hover:text-orange-500 transition-colors">Overview</a>
-            <a href="#projects" className="hover:text-orange-500 transition-colors">Projects</a>
-            <a href="#expertise" className="hover:text-orange-500 transition-colors">Expertise</a>
-            <a href="#experience" className="hover:text-orange-500 transition-colors">Experience</a>
-            <a href="#training" className="hover:text-orange-500 transition-colors">Corporate Training</a>
-            <a href="#education" className="hover:text-orange-500 transition-colors">Education</a>
-            <a href="#contact" className="hover:text-orange-500 transition-colors">Contact</a>
+            <Link to="/" className="hover:text-orange-500 transition-colors">Home</Link>
+            <Link to="/about" className="hover:text-orange-500 transition-colors">About</Link>
+            <Link to="/experience?tab=industry" className="hover:text-orange-500 transition-colors">Industry MIS</Link>
+            <Link to="/experience?tab=edtech" className="hover:text-orange-500 transition-colors">EdTech & Training</Link>
+            <Link to="/contact" className="hover:text-orange-500 transition-colors">Contact & Bookings</Link>
           </div>
 
-          {/* LinkedIn, Resume & Scroll Top */}
+          {/* Socials & Actions */}
           <div className="flex items-center gap-3">
             <a
               href={personalInfo.linkedin}
@@ -73,10 +72,10 @@ export const Footer: React.FC = () => {
         {/* Bottom Credits */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400 font-medium">
           <p>
-            &copy; {new Date().getFullYear()} {personalInfo.name}. All rights reserved. Mohali, Punjab.
+            &copy; {new Date().getFullYear()} {personalInfo.name}. Mohali, Punjab &bull; Global Remote.
           </p>
           <p className="flex items-center gap-1 font-mono text-[11px]">
-            MIS/BI Reports & Dashboard Specialist &bull; Power BI &bull; Advanced Excel &bull; Corporate Training
+            MIS/BI Reports & Dashboard Specialist &bull; Corporate Trainer &bull; Advanced Excel &bull; Power BI &bull; ERP
           </p>
         </div>
       </div>
