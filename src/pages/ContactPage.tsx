@@ -5,12 +5,10 @@ import {
   MapPin, 
   Copy, 
   Check, 
-  Sparkles, 
   Clock, 
   Send, 
   ExternalLink, 
   ChevronRight, 
-  HelpCircle, 
   CheckCircle2, 
   Building,
   User
@@ -75,7 +73,7 @@ export const ContactPage: React.FC = () => {
   return (
     <div className="pt-28 pb-20 relative overflow-hidden">
       {/* Glow */}
-      <div className="absolute top-24 right-1/3 w-[600px] h-[600px] bg-orange-500/10 dark:bg-orange-500/15 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-24 right-1/3 w-[600px] h-[600px] bg-orange-500/10 dark:bg-orange-500/15 rounded-full blur-3xl pointer-events-none -z-10 animate-float-slow" />
 
       {/* ================= BREADCRUMB & HEADER ================= */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
@@ -86,17 +84,11 @@ export const ContactPage: React.FC = () => {
         </nav>
 
         <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100 dark:bg-orange-500/15 border border-orange-300 dark:border-orange-500/25 mb-4">
-            <Sparkles className="w-4 h-4 text-orange-600 dark:text-orange-400" />
-            <span className="text-xs font-mono font-bold tracking-wide text-orange-700 dark:text-orange-400 uppercase">
-              Consulting & Training Inquiries
-            </span>
-          </div>
           <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
             Let's Collaborate on Your Training or MIS Strategy
           </h1>
           <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-            Whether organizing a corporate bootcamp, university analytics accelerator, executive Power BI dashboard rollout, or freight audit reconciliation, Pooja is ready to partner with you.
+            Whether organizing a corporate bootcamp, university analytics accelerator, executive Power BI dashboard rollout, or freight audit reconciliation, I am ready to partner with you.
           </p>
         </div>
       </div>
@@ -116,7 +108,7 @@ export const ContactPage: React.FC = () => {
                     Inquiry Received!
                   </h3>
                   <p className="text-sm text-slate-600 dark:text-slate-300 max-w-md mx-auto leading-relaxed">
-                    Thank you, <strong>{formData.name}</strong>. Your details have been formatted. To ensure instant delivery to Pooja's inbox, click below to open your preferred email client or copy the message.
+                    Thank you, <strong>{formData.name}</strong>. Your details have been formatted. To ensure instant delivery to my inbox, click below to open your preferred email client or copy the message.
                   </p>
 
                   <div className="pt-4 flex flex-wrap justify-center gap-3">
@@ -260,7 +252,7 @@ export const ContactPage: React.FC = () => {
                       className="w-full py-3.5 rounded-xl theme-btn-gradient text-white font-extrabold text-sm shadow-md hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2"
                     >
                       <Send className="w-4 h-4" />
-                      <span>Submit Inquiry to Pooja</span>
+                      <span>Send Message</span>
                     </button>
                   </div>
                 </form>
@@ -371,10 +363,6 @@ export const ContactPage: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="p-8 sm:p-12 rounded-3xl glass-card border border-slate-200 dark:border-slate-800 shadow-xl">
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100 dark:bg-orange-500/10 text-orange-600 dark:text-orange-400 text-xs font-mono font-bold uppercase mb-2">
-              <HelpCircle className="w-4 h-4" />
-              <span>Frequently Asked Questions</span>
-            </div>
             <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
               Consulting & Training FAQ
             </h3>
@@ -387,7 +375,7 @@ export const ContactPage: React.FC = () => {
                 <span>Can workshops be customized around our company's datasets?</span>
               </h4>
               <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                Yes. Under mutual NDA, Pooja sanitizes and structures your company's actual operational files, ensuring employees learn solutions directly applicable to their day-to-day workflow.
+                Yes. Under mutual NDA, I sanitize and structure your company's actual operational files, ensuring employees learn solutions directly applicable to their day-to-day workflow.
               </p>
             </div>
 

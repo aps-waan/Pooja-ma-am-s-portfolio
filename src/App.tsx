@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { LinkedInIcon } from './components/icons/LinkedInIcon';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
@@ -11,6 +11,24 @@ import { ExperiencePage } from './pages/ExperiencePage';
 import { ContactPage } from './pages/ContactPage';
 import { personalInfo, colorThemes } from './data/portfolioData';
 import { ColorThemeOption } from './types/portfolio';
+
+// Smooth animated routes wrapper
+const AnimatedRoutes: React.FC = () => {
+  const location = useLocation();
+
+  return (
+    <div key={location.pathname} className="animate-page-enter flex-1">
+      <Routes location={location}>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/experience" element={<ExperiencePage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        {/* Catch-all redirect to Home */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </div>
+  );
+};
 
 export const App: React.FC = () => {
   // Light mode default, dark mode switchable
@@ -58,7 +76,7 @@ export const App: React.FC = () => {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className={`min-h-screen transition-colors duration-250 flex flex-col justify-between ${
+      <div className={`min-h-screen transition-colors duration-300 flex flex-col justify-between ${
         darkMode ? 'bg-[#0B0F17] text-slate-100' : 'bg-[#F8FAFC] text-slate-900'
       }`}>
         {/* Background subtle grid pattern */}
@@ -71,16 +89,9 @@ export const App: React.FC = () => {
           onOpenThemeModal={() => setIsThemeModalOpen(true)}
         />
 
-        {/* Multipage Routing Body */}
-        <main className="flex-1">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/experience" element={<ExperiencePage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            {/* Catch-all redirect to Home */}
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
+        {/* Multipage Routing Body with smooth page-enter animation */}
+        <main className="flex-1 flex flex-col">
+          <AnimatedRoutes />
         </main>
 
         {/* Global Footer */}
@@ -96,13 +107,13 @@ export const App: React.FC = () => {
           setDarkMode={setDarkMode}
         />
 
-        {/* Floating LinkedIn Quick-Connect Button */}
+        {/* Floating LinkedIn Quick-Connect Button with micro-interactions */}
         <a
           href={personalInfo.linkedin}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Connect with Pooja on LinkedIn"
-          className="fixed bottom-6 right-6 z-40 p-3.5 rounded-full bg-[#0A66C2] hover:bg-[#004182] text-white shadow-xl shadow-[#0A66C2]/30 hover:scale-110 active:scale-95 transition-all flex items-center justify-center group"
+          className="fixed bottom-6 right-6 z-40 p-3.5 rounded-full bg-[#0A66C2] hover:bg-[#004182] text-white shadow-xl shadow-[#0A66C2]/30 hover:scale-110 active:scale-95 transition-all duration-300 flex items-center justify-center group"
         >
           <LinkedInIcon className="w-6 h-6" />
           <span className="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 ease-in-out font-bold text-xs pl-0 group-hover:pl-2">

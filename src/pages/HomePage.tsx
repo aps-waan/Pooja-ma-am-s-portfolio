@@ -4,9 +4,7 @@ import {
   ArrowRight, 
   Download, 
   Database, 
-  Sparkles, 
   CheckCircle2, 
-  TrendingUp, 
   Briefcase, 
   GraduationCap, 
   BarChart3, 
@@ -19,7 +17,7 @@ export const HomePage: React.FC = () => {
   return (
     <div className="relative overflow-hidden">
       {/* Subtle atmospheric gradient glows */}
-      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-orange-500/10 dark:bg-orange-500/15 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-orange-500/10 dark:bg-orange-500/15 rounded-full blur-3xl pointer-events-none -z-10 animate-float-slow" />
 
       {/* ================= HERO SECTION ================= */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28">
@@ -27,14 +25,6 @@ export const HomePage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             {/* Left Column: Core Value Proposition */}
             <div className="lg:col-span-7 flex flex-col gap-6 text-left">
-              {/* Status Pill */}
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-100 dark:bg-orange-500/15 border border-orange-300 dark:border-orange-500/30 w-fit">
-                <Sparkles className="w-4 h-4 text-orange-600 dark:text-orange-400" />
-                <span className="text-xs font-mono font-bold tracking-wide text-orange-800 dark:text-orange-300 uppercase">
-                  10+ Years MIS/BI Specialist & Corporate Trainer
-                </span>
-              </div>
-
               {/* Main Headline */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.12]">
                 Transforming Enterprise Data into{' '}
@@ -61,7 +51,7 @@ export const HomePage: React.FC = () => {
 
                 <Link
                   to="/contact"
-                  className="px-5 py-3.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 hover:border-orange-500 hover:text-orange-600 dark:hover:text-orange-400 font-bold text-sm flex items-center gap-2 transition-all shadow-sm"
+                  className="px-5 py-3.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 hover:border-orange-500 hover:text-orange-600 dark:hover:text-orange-400 font-bold text-sm flex items-center gap-2 transition-all shadow-sm hover:scale-[1.02] active:scale-[0.98]"
                 >
                   <span>Book Training / Consult</span>
                 </Link>
@@ -69,7 +59,7 @@ export const HomePage: React.FC = () => {
                 <a
                   href={personalInfo.resumeUrl}
                   download="Pooja_Bhatt_Resume.pdf"
-                  className="px-4 py-3.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 hover:border-orange-500 hover:text-orange-600 dark:hover:text-orange-400 font-bold text-sm flex items-center gap-2 transition-all shadow-sm"
+                  className="px-4 py-3.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 hover:border-orange-500 hover:text-orange-600 dark:hover:text-orange-400 font-bold text-sm flex items-center gap-2 transition-all shadow-sm hover:scale-[1.02] active:scale-[0.98]"
                 >
                   <Download className="w-4 h-4 text-orange-500" />
                   <span>Resume (PDF)</span>
@@ -95,7 +85,7 @@ export const HomePage: React.FC = () => {
 
             {/* Right Column: Grounded Executive Profile Card */}
             <div className="lg:col-span-5">
-              <div className="relative rounded-3xl glass-card p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-xl">
+              <div className="relative rounded-3xl glass-card p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-xl transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl">
                 {/* Verified Corner Badge */}
                 <div className="absolute -top-3 -right-2 px-3.5 py-1 bg-slate-900 dark:bg-orange-500 text-white rounded-full text-[11px] font-mono font-bold tracking-wider uppercase shadow-md flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
@@ -174,7 +164,7 @@ export const HomePage: React.FC = () => {
                     to="/about"
                     className="font-bold text-orange-600 dark:text-orange-400 hover:underline flex items-center gap-1"
                   >
-                    <span>Read Full Bio</span>
+                    <span>Read My Story</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
@@ -217,17 +207,11 @@ export const HomePage: React.FC = () => {
       <section className="py-24 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100 dark:bg-orange-500/10 border border-orange-300 dark:border-orange-500/25 mb-4">
-              <TrendingUp className="w-4 h-4 text-orange-600 dark:text-orange-400" />
-              <span className="text-xs font-mono font-bold tracking-wide text-orange-700 dark:text-orange-400 uppercase">
-                Dual Expertise Framework
-              </span>
-            </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Enterprise Industry Practice & EdTech Pedagogy
             </h2>
             <p className="mt-4 text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-              What sets Pooja apart is her dual fluency: a decade inside corporate command rooms solving complex business operations, paired with a passion for teaching future data leaders.
+              What defines my career is a dual fluency: a decade inside corporate command rooms solving complex business operations, paired with a passion for teaching future data leaders.
             </p>
           </div>
 
@@ -346,10 +330,10 @@ export const HomePage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-              The 4 Pillars of Pooja's Analytical Practice
+              The 4 Pillars of My Analytical Practice
             </h2>
             <p className="mt-3 text-base text-slate-600 dark:text-slate-300">
-              Guiding every automated pipeline built and every masterclass delivered.
+              Guiding every automated pipeline I build and every masterclass I deliver.
             </p>
           </div>
 
@@ -505,7 +489,7 @@ export const HomePage: React.FC = () => {
                 Ready to Upgrade Your MIS Architecture or Upskill Your Analytics Team?
               </h2>
               <p className="text-white/90 text-sm sm:text-base leading-relaxed mb-8 max-w-2xl font-medium">
-                Whether you need an executive Power BI reporting overhaul, high-volume carrier billing reconciliation, or a custom university/corporate workshop, Pooja brings 10+ years of proven results.
+                Whether you need an executive Power BI reporting overhaul, high-volume carrier billing reconciliation, or a custom university/corporate workshop, I bring 10+ years of proven results.
               </p>
 
               <div className="flex flex-wrap items-center gap-4">

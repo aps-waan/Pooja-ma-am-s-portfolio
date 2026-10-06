@@ -9,7 +9,6 @@ import {
   CheckCircle2, 
   ChevronRight, 
   Layers, 
-  Sparkles, 
   ArrowRight, 
   Users, 
   Award, 
@@ -50,7 +49,7 @@ export const ExperiencePage: React.FC = () => {
   return (
     <div className="pt-28 pb-20 relative overflow-hidden">
       {/* Background glow */}
-      <div className="absolute top-24 left-1/3 w-[600px] h-[600px] bg-orange-500/10 dark:bg-orange-500/15 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-24 left-1/3 w-[600px] h-[600px] bg-orange-500/10 dark:bg-orange-500/15 rounded-full blur-3xl pointer-events-none -z-10 animate-float-slow" />
 
       {/* ================= BREADCRUMB & HEADER ================= */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
@@ -61,17 +60,11 @@ export const ExperiencePage: React.FC = () => {
         </nav>
 
         <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100 dark:bg-orange-500/15 border border-orange-300 dark:border-orange-500/25 mb-4">
-            <Sparkles className="w-4 h-4 text-orange-600 dark:text-orange-400" />
-            <span className="text-xs font-mono font-bold tracking-wide text-orange-700 dark:text-orange-400 uppercase">
-              10+ Years of Dual Impact
-            </span>
-          </div>
           <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
             Corporate Industry Practice & EdTech Pedagogy
           </h1>
           <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-            Explore Pooja's 10+ years across corporate command rooms (Logistics, Luxury Automotive, Retail ERP) and higher education classrooms (CGC, Chitkara University, 1,000+ Alumni).
+            Explore my 10+ years across corporate command rooms (Logistics, Luxury Automotive, Retail ERP) and higher education classrooms (CGC, Chitkara University, 1,000+ Alumni).
           </p>
         </div>
       </div>
@@ -119,7 +112,7 @@ export const ExperiencePage: React.FC = () => {
 
       {/* ================= TAB 1: INDUSTRY & CORPORATE MIS ================= */}
       {activeTab === 'industry' && (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+        <div key="industry" className="animate-fade-in-up max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
           {/* Section 1: In-Depth Case Studies */}
           <div>
             <div className="mb-10">
@@ -283,7 +276,7 @@ export const ExperiencePage: React.FC = () => {
 
       {/* ================= TAB 2: EDTECH & CORPORATE TRAINING ================= */}
       {activeTab === 'edtech' && (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+        <div key="edtech" className="animate-fade-in-up max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
           {/* Institutional Highlights Banner */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-7 rounded-3xl glass-card border border-slate-200 dark:border-slate-800 text-center shadow-md">
@@ -491,7 +484,7 @@ export const ExperiencePage: React.FC = () => {
 
       {/* ================= TAB 3: FULL CHRONOLOGICAL TIMELINE ================= */}
       {activeTab === 'all' && (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div key="all" className="animate-fade-in-up max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Category Filter Chips */}
           <div className="flex flex-wrap justify-center gap-2 mb-12">
             {['All', 'Corporate Training', 'MIS & Analytics', 'Logistics & Billing', 'Automotive & Retail'].map((cat) => (
@@ -584,7 +577,7 @@ export const ExperiencePage: React.FC = () => {
             Interested in Collaborating on a Project or Workshop?
           </h3>
           <p className="text-sm text-slate-600 dark:text-slate-300 max-w-xl mx-auto mb-6">
-            Pooja is available for corporate training bootcamps, university analytics workshops, and executive MIS dashboard consulting.
+            I am available for corporate training bootcamps, university analytics workshops, and executive MIS dashboard consulting.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
@@ -592,14 +585,14 @@ export const ExperiencePage: React.FC = () => {
               className="px-6 py-3 rounded-xl theme-btn-gradient text-white text-xs sm:text-sm font-bold shadow-md hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2"
             >
               <Send className="w-4 h-4" />
-              <span>Contact Pooja Directly</span>
+              <span>Get in Touch with Me</span>
             </Link>
             <a
               href={personalInfo.resumeUrl}
               download="Pooja_Bhatt_Resume.pdf"
               className="px-6 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 text-xs sm:text-sm font-bold hover:border-orange-500 hover:text-orange-600 transition-colors"
             >
-              Download Verified Resume
+              Download My Resume (PDF)
             </a>
           </div>
         </div>
