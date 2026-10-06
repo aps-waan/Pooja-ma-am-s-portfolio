@@ -41,10 +41,11 @@ const POOJA_EMAIL = "official.poojabhatt90@gmail.com";
 
 function doPost(e) {
   try {
-    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
+    var sheet = ss ? ss.getActiveSheet() : null;
     
     // Auto-create polished header row if the sheet is fresh
-    if (sheet.getLastRow() === 0) {
+    if (sheet && sheet.getLastRow() === 0) {
       sheet.appendRow([
         "Timestamp",
         "Full Name",
@@ -63,34 +64,39 @@ function doPost(e) {
     }
     
     var data = {};
-    if (e.postData && e.postData.contents) {
+    if (e && e.postData && e.postData.contents) {
       try {
         data = JSON.parse(e.postData.contents);
       } catch (err) {
-        data = e.parameter || {};
+        data = (e && e.parameter) || {};
       }
-    } else {
-      data = e.parameter || {};
+    } else if (e && e.parameter) {
+      data = e.parameter;
     }
     
     var timestamp = new Date();
-    var name = data.name || "Anonymous";
-    var email = data.email || "No Email Provided";
-    var organization = data.organization || "Not Specified";
+    var name = data.name || "Test Client (Direct Run)";
+    var email = data.email || "client@example.com";
+    var organization = data.organization || "Test Organization";
     var service = data.service || "Executive MIS & Power BI Consulting";
-    var timeline = data.timeline || "Not Specified";
-    var message = data.message || "No Message Provided";
+    var timeline = data.timeline || "Immediate (1-2 wks)";
+    var message = data.message || "Test message submitted through portfolio contact integration.";
     
-    // 1. Append row to Google Sheet
-    sheet.appendRow([
-      timestamp,
-      name,
-      email,
-      organization,
-      service,
-      timeline,
-      message
-    ]);
+    // 1. Append row to Google Sheet (if bound to a spreadsheet)
+    if (sheet) {
+      sheet.appendRow([
+        timestamp,
+        name,
+        email,
+        organization,
+        service,
+        timeline,
+        message
+      ]);
+      Logger.log("Successfully recorded row in Google Sheet.");
+    } else {
+      Logger.log("Notice: No active Google Sheet bound to this script. (If you want sheet logging, open Apps Script via 'Extensions > Apps Script' inside your Google Sheet).");
+    }
     
     // 2. Format and send an immediate executive email alert to Ms. Pooja
     var subject = "🎯 New Portfolio Inquiry: " + name + " — " + service;
@@ -143,6 +149,8 @@ function doPost(e) {
       </div>
     `;
     
+    Logger.log("Dispatching notification email to target recipient: " + POOJA_EMAIL);
+    
     MailApp.sendEmail({
       to: POOJA_EMAIL,
       subject: subject,
@@ -150,12 +158,15 @@ function doPost(e) {
       replyTo: email
     });
     
+    Logger.log("Email successfully sent to: " + POOJA_EMAIL);
+    
     return ContentService.createTextOutput(JSON.stringify({
       status: "success",
       message: "Inquiry saved to Google Sheet and email alert dispatched to Ms. Pooja."
     })).setMimeType(ContentService.MimeType.JSON);
     
   } catch (error) {
+    Logger.log("Error in execution: " + error.toString());
     return ContentService.createTextOutput(JSON.stringify({
       status: "error",
       message: error.toString()
@@ -174,6 +185,7 @@ function doGet(e) {
 // 1-CLICK TEST FUNCTION (Run this directly inside Apps Script!)
 // ==============================================================
 function testSendEmail() {
+  Logger.log("Running test with destination email: " + POOJA_EMAIL);
   var mockEvent = {
     postData: {
       contents: JSON.stringify({
