@@ -169,3 +169,25 @@ function doGet(e) {
     message: "Google Apps Script webhook is active. Send a POST request to record inquiries and dispatch emails."
   })).setMimeType(ContentService.MimeType.JSON);
 }
+
+// ==============================================================
+// 1-CLICK TEST FUNCTION (Run this directly inside Apps Script!)
+// ==============================================================
+function testSendEmail() {
+  var mockEvent = {
+    postData: {
+      contents: JSON.stringify({
+        name: "Test Client",
+        email: "testclient@example.com",
+        organization: "Automated Verification Corp",
+        service: "Executive MIS & Power BI Consulting",
+        timeline: "Immediate (1-2 wks)",
+        message: "Hello Pooja, this is a test inquiry to verify that email alerts are working!"
+      })
+    }
+  };
+  
+  var result = doPost(mockEvent);
+  Logger.log("Result: " + result.getContent());
+}
+
